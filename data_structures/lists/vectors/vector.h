@@ -7,8 +7,7 @@ namespace dat {
 template <typename T>
 class vector {
    public:
-
-	typedef T* iterator;
+    typedef T *iterator;
 
     vector();
     vector(unsigned int size);
