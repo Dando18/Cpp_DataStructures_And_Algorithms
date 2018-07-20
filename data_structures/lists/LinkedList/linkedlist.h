@@ -52,7 +52,19 @@ linkedlist<T>::linkedlist() : _size(0), sentinel(new Node) {
 
 template <typename T>
 linkedlist<T>::linkedlist(const linkedlist<T>& copy) : _size(copy.size()) {
-    // TODO finish copy constructor
+    sentinel = new Node;
+    Node* last = sentinel;
+    for (iterator i = copy.begin(); i != copy.end(); i = i->right) {
+        Node* tmp = new Node;
+        tmp->val = i->val;
+        
+        // attach new node to the node to the left
+        tmp->left = last;
+        last->right = left;
+        last = tmp;
+    }
+    last->right = sentinel;
+    sentinel->left = last;
 }
 
 template <typename T>
