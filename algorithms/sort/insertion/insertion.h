@@ -1,6 +1,8 @@
 #ifndef _INSERTION_H_
 #define _INSERTION_H_
 
+#include <vector>
+
 namespace alg {
 
 template <typename T>
