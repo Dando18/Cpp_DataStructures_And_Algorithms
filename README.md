@@ -5,7 +5,7 @@ Generic implementations of common data structures and algorithms in c++.
 **Table of Contents**
 - Algorithms
     - Sort
-        - Bubble
+        - (Bubble)[algorithms/sort/bubble/bubble.md]
         - Insertion
 - Data Structures
     - Lists
