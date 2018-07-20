@@ -1,5 +1,5 @@
 .vscode
-compile.sh
+compile.bat
 
 # Prerequisites
 *.d
