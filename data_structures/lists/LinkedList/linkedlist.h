@@ -15,7 +15,7 @@ template <typename T>
 class linkedlist {
     public:
 
-    typedef LLNode* iterator;
+    typedef LLNode<T>* iterator;
 
     linkedlist();
     linkedlist(const linkedlist&);
@@ -28,7 +28,7 @@ class linkedlist {
     
     T pop_front();
     T pop_back();
-    LLNode* find(T);
+    LLNode<T>* find(T);
 
     iterator begin() { return sentinel->right; }
     iterator end() { return sentinel; }
@@ -39,9 +39,23 @@ class linkedlist {
     unsigned int size() { return _size; }
 
     private:
-        LLNode *sentinel;
-        unsigned int _size;
+     unsigned int _size;
+     LLNode<T>* sentinel;
 };
+
+// implementation
+template <typename T>
+linkedlist<T>::linkedlist() : _size(0), sentinel(new LLNode<T>) {
+    sentinel->right = sentinel;
+    sentinel->left = sentinel;
+}
+
+template <typename T>
+linkedlist<T>::linkedlist(const linkedlist<T>& copy) : _size(copy.size()) {
+    // TODO finish copy constructor
+}
+
+
 
 }
 
