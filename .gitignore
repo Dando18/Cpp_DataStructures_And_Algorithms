@@ -1,5 +1,5 @@
 .vscode
-*.bash
+compile.sh
 
 # Prerequisites
 *.d
