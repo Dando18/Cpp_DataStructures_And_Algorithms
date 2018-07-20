@@ -8,7 +8,7 @@ Generic implementations of common data structures and algorithms in c++.
         - [Bubble](algorithms/sort/bubble/bubble.md)
         - [Insertion](algorithms/sort/insertion/insertion.md)
 - Data Structures
-    - Lists
+    - [Lists](data_structures/lists)
         - [LinkedList](data_structures/lists/LinkedList/linked_list.md)
         - [Vector](data_structures/lists/vectors/vectors.md)
     - Trees
