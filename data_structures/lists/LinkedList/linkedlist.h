@@ -24,7 +24,7 @@ class linkedlist {
     linkedlist();
     linkedlist(const linkedlist&);
     ~linkedlist();
-    linkedlist<T>& operator=(const linkedlist&);
+    linkedlist<T>& operator=(const linkedlist&) = delete;
 
     void push_back(const T&);
     void push_front(const T&);
@@ -65,12 +65,6 @@ linkedlist<T>::linkedlist(const linkedlist<T>& copy) : _size(copy.size()) {
     }
     last->right = sentinel;
     sentinel->left = last;
-}
-
-template <typename T>
-linkedlist<T>& linkedlist<T>::operator=(const linkedlist<T>& val) {
-    // TODO finish copy operator
-    return NULL;
 }
 
 template <typename T>
