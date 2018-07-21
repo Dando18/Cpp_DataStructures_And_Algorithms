@@ -8,7 +8,7 @@ namespace alg {
 template <typename T>
 void insertionSort(std::vector<T>& v) {
     int i, key, j;
-    for (i = 0; i < v.size(); ++i) {
+    for (i = 1; i < v.size(); ++i) {
         key = v[i];
         j = i - 1;
 
