@@ -118,6 +118,7 @@ T linkedlist<T>::pop_back() {
     // delete node as it is being removed
     T val = popped->val;
     delete popped;
+    _size--;
 
     return val;
 }
@@ -133,6 +134,7 @@ T linkedlist<T>::pop_front() {
     // delete node as it is being removed
     T val = popped->val;
     delete popped;
+    _size--;
 
     return val;
 }
@@ -146,6 +148,7 @@ void linkedlist<T>::insert_after(const T& newVal, const T& leftVal) {
     ins->right = left->right;
     left->right = ins;
     ins->left = left;
+    _size++;
 }
 
 template <typename T>
@@ -157,6 +160,7 @@ void linkedlist<T>::insert_before(const T& newVal, const T& rightVal) {
     ins->left = right->left;
     right->left = ins;
     ins->right = right;
+    _size++;
 }
 
 template <typename T>
