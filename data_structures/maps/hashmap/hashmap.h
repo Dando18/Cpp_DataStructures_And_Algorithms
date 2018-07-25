@@ -7,40 +7,69 @@
 namespace dat
 {
 
-template <typename T>
+template <typename K, typename T>
 class HashMap {
   public:
+	HashMap();
     HashMap(unsigned int);
     ~HashMap();
 
-	void add(const T&);
-  private:
-    std::size_t hash(const T&);
+	void add(const K&, const T&);
+	bool contains(const T&);
 
-    std::vector<std::vector<T> > table;
+	T& operator[](const K&);
+
+  private:
+	struct pair {
+		K key;
+		T val;
+	};
+
+    std::size_t hash(const K&);
+
+	std::vector<K> keys;
+    std::vector<std::vector<pair> > table;
     unsigned int _size;
 };
 
 
-template <typename T>
-HashMap<T>::HashMap(unsigned int size) : _size(size) {
-    table.resize(size);
+template <typename K, typename T>
+HashMap<K,T>::HashMap() : _size(100) {
+	table.resize(_size);
 }
 
-template <typename T>
-void add(const T& obj) {
+template <typename K, typename T>
+HashMap<K,T>::HashMap(unsigned int size) : _size(size) {
+    table.resize(_size);
+}
+
+template <typename K, typename T>
+HashMap<K,T>::~HashMap() {
+	// TODO finish destructor
+}
+
+template <typename K, typename T>
+void HashMap<K,T>::add(const K& key, const T& val) {
+	// return if we already have the key
+	for (K k : keys) 
+		if (k == key) return;
+	keys.push_back(key);
 	// get appropriate entry in table
-	std::vector<T> bucket = table[hash(obj) % _size];
-	// return if obj is already in bucket
-	for (T t : bucket)
-		if (t == obj) return;
+	std::vector<T> bucket = table[hash(key) % _size];
 	// add obj to
-	bucket.push_back(obj);
+	bucket.push_back(pair {K, T});
 }
 
-template <typename T>
-std::size_t HashMap<T>::hash(const T& obj) {
-	return std::hash<T>{}(obj);
+template <typename K, typename T>
+T& HashMap<K,T>::operator[](const K&) {
+	std::vector<T> bucket = table[hash(key) % _size];
+	for ()
+}
+
+
+template <typename K, typename T>
+std::size_t HashMap<K,T>::hash(const K& obj) {
+	return std::hash<K>{}(obj);
 }
 
 } // namespace dat
