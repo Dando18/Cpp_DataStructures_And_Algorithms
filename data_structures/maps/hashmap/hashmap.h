@@ -9,7 +9,7 @@ namespace dat
 template <typename T>
 class HashMap {
   public:
-    HashMap();
+    HashMap(unsigned int);
     ~HashMap();
 
   private:
@@ -20,10 +20,14 @@ class HashMap {
 };
 
 
+template <typename T>
+HashMap<T>::HashMap(unsigned int size) : _size(size) {
+    table.resize(size);
+}
 
 template <typename T>
 void HashMap<T>::hash(const T& obj) {
-    
+
 }
 
 } // namespace dat
