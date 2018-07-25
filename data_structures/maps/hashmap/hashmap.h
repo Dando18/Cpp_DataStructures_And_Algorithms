@@ -2,6 +2,7 @@
 #define _HASHMAP_H_
 
 #include <vector>
+#include <functional>
 
 namespace dat
 {
@@ -13,7 +14,7 @@ class HashMap {
     ~HashMap();
 
   private:
-    void hash(const T&);
+    std::size_t hash(const T&);
 
     std::vector<std::vector<T> > table;
     unsigned int _size;
@@ -26,8 +27,8 @@ HashMap<T>::HashMap(unsigned int size) : _size(size) {
 }
 
 template <typename T>
-void HashMap<T>::hash(const T& obj) {
-
+std::size_t HashMap<T>::hash(const T& obj) {
+	return std::hash<T>{}(obj);
 }
 
 } // namespace dat
