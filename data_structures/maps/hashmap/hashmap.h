@@ -13,6 +13,7 @@ class HashMap {
     HashMap(unsigned int);
     ~HashMap();
 
+	void add(const T&);
   private:
     std::size_t hash(const T&);
 
@@ -24,6 +25,17 @@ class HashMap {
 template <typename T>
 HashMap<T>::HashMap(unsigned int size) : _size(size) {
     table.resize(size);
+}
+
+template <typename T>
+void add(const T& obj) {
+	// get appropriate entry in table
+	std::vector<T> bucket = table[hash(obj) % _size];
+	// return if obj is already in bucket
+	for (T t : bucket)
+		if (t == obj) return;
+	// add obj to
+	bucket.push_back(obj);
 }
 
 template <typename T>
