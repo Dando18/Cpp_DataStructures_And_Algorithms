@@ -1,5 +1,6 @@
 .vscode
 compile.bat
+makefile
 
 # Prerequisites
 *.d
