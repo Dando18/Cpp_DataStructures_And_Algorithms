@@ -11,5 +11,7 @@ Generic implementations of common data structures and algorithms in c++.
     - [Lists](data_structures/lists)
         - [LinkedList](data_structures/lists/LinkedList) [(INFO)](data_structures/lists/LinkedList/linked_list.md) [(SOURCE)](data_structures/lists/LinkedList/linkedlist.h) [(EXAMPLE)](data_structures/lists/LinkedList/test.cpp)
         - [Vector](data_structures/lists/vectors) [(INFO)](data_structures/lists/vectors/vectors.md) [(SOURCE)](data_structures/lists/vectors/vector.h) [(EXAMPLE)](data_structures/lists/vectors/test.cpp)
+    - [Maps](data_structures/maps)
+        - [HashMap](data_structures/maps/hashmap) [(INFO)](data_structures/maps/hashmap/hashmap.md) [(SOURCE)](data_structures/maps/hashmap/hashmap.h) [(EXAMPLE)](data_structures/maps/hashmap/test.cpp)
     - [Trees](data_structures/trees)
         - [Binary Search Tree](data_structures/trees/BinarySearchTree) [(INFO)](data_structures/trees/BinarySearchTree/BinarySearchTree.md) (SOURCE) (EXAMPLE)
