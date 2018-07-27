@@ -31,7 +31,8 @@ class HashMap {
     std::size_t hash(const K&);
 
     std::vector<std::vector<pair> > table;
-    unsigned int _size;
+    unsigned int _size;		// constant size to allocate table
+	unsigned int _entries;	// updated number of entries put into the table
 };
 
 
@@ -59,6 +60,8 @@ void HashMap<K,T>::add(const K& key, const T& val) {
 		if (item.key == key) return;
 	// add obj to bucket
 	bucket.push_back(make_pair(key, val));
+	// update number of entries
+	_entries++;
 }
 
 
