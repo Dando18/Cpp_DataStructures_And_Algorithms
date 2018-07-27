@@ -3,6 +3,7 @@
 
 #include <functional>
 #include <vector>
+#include <iostream>
 
 namespace dat {
 
@@ -18,7 +19,9 @@ class HashMap {
     bool contains(const T&);
     bool containsKey(const K&);
 
+
     T& operator[](const K&);
+    const T& operator[](const K&) const;
 
    private:
     struct pair {
@@ -81,11 +84,20 @@ T HashMap<K, T>::get(const K& key) {
 // otherwise it returns NULL
 template <typename K, typename T>
 T& HashMap<K, T>::operator[](const K& key) {
+    // setting
+    std::cout << "setting" << std::endl;
     // find appropriate entry in table
+    return get(key);
+}
+
+template <typename K, typename T>
+const T& HashMap<K, T>::operator[](const K& key) const {
+    // getting
+    std::cout << "getting" << std::endl;   
     std::vector<pair> bucket = table[hash(key) % _size];
-    // search to see if key is present
-    for (pair item : bucket)
-        if (item.key == key) return &item.val;
+    for (pair item : bucket) 
+        if (item.key == key)
+            return item.val;
     return NULL;
 }
 
@@ -94,7 +106,7 @@ bool HashMap<K, T>::contains(const T& val) {
     for (std::vector<pair> bucket : table) {
         if (bucket.empty()) continue;
         for (pair item : bucket) {
-            if (item.val == T) return true;
+            if (item.val == val) return true;
         }
     }
     return false;
