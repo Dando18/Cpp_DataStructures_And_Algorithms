@@ -52,7 +52,7 @@ template <typename K, typename T>
 void HashMap<K,T>::add(const K& key, const T& val) {
 	// get appropriate entry in table
 	std::vector<pair> bucket = table[hash(key) % _size];
-	// check if check already exists, exit if it does
+	// check if key already exists, exit if it does
 	for (std::vector<pair> item : bucket) 
 		if (item.key == key) return;
 	// add obj to bucket
