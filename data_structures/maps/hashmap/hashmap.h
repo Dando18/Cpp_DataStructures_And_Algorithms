@@ -60,10 +60,18 @@ void HashMap<K,T>::add(const K& key, const T& val) {
 	bucket.push_back(pair {K, T});
 }
 
+
+// returns the address of the item if it is in the map,
+// otherwise it returns NULL
 template <typename K, typename T>
-T& HashMap<K,T>::operator[](const K&) {
+T& HashMap<K,T>::operator[](const K& key) {
+	// find appropriate entry in table
 	std::vector<T> bucket = table[hash(key) % _size];
-	for ()
+	// search to see if key is present
+	for (std::vector<pair> item : bucket)
+		if (item.key == key)
+			return &item.val;
+	return NULL;
 }
 
 
