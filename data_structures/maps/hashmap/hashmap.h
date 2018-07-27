@@ -24,6 +24,7 @@ class HashMap {
 		K key;
 		T val;
 	};
+	pair make_pair(K key, T val) { pair p; p.key=key; p.val=val; return p; }
 
     std::size_t hash(const K&);
 
