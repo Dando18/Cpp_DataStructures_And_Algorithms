@@ -15,6 +15,7 @@ class HashMap {
     ~HashMap();
 
 	void add(const K&, const T&);
+	T get(const K&);
 	bool contains(const T&);
 
 	T& operator[](const K&);
@@ -57,6 +58,18 @@ void HashMap<K,T>::add(const K& key, const T& val) {
 		if (item.key == key) return;
 	// add obj to bucket
 	bucket.push_back(make_pair(key, val));
+}
+
+
+template <typename K, typename T>
+T HashMap<K,T>::get(const K& key) {
+	// find the appropriate entry in the table
+	std::vector<pair> bucket = table[hash(key) % _size];
+	// search for key
+	for (pair item : bucket)
+		if (item.key == key)
+			return item.val;
+	return NULL;
 }
 
 
