@@ -28,7 +28,6 @@ class HashMap {
 
     std::size_t hash(const K&);
 
-	std::vector<K> keys;
     std::vector<std::vector<pair> > table;
     unsigned int _size;
 };
@@ -51,14 +50,13 @@ HashMap<K,T>::~HashMap() {
 
 template <typename K, typename T>
 void HashMap<K,T>::add(const K& key, const T& val) {
-	// return if we already have the key
-	for (K k : keys) 
-		if (k == key) return;
-	keys.push_back(key);
 	// get appropriate entry in table
-	std::vector<T> bucket = table[hash(key) % _size];
-	// add obj to
-	bucket.push_back(pair {K, T});
+	std::vector<pair> bucket = table[hash(key) % _size];
+	// check if check already exists, exit if it does
+	for (std::vector<pair> item : bucket) 
+		if (item.key == key) return;
+	// add obj to bucket
+	bucket.push_back(make_pair(key, val));
 }
 
 
