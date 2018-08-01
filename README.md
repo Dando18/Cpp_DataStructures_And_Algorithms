@@ -7,6 +7,7 @@ Generic implementations of common data structures and algorithms in c++.
     - [Sort](algorithms/sort)
         - [Bubble](algorithms/sort/bubble) [(INFO)](algorithms/sort/bubble/bubble.md) [(SOURCE)](algorithms/sort/bubble/bubble.h) [(EXAMPLE)](algorithms/sort/bubble/test.cpp)
         - [Insertion](algorithms/sort/insertion) [(INFO)](algorithms/sort/insertion/insertion.md) [(SOURCE)](algorithms/sort/insertion/insertion.cpp) [(EXAMPLE)](algorithms/sort/insertion/test.cpp)
+        - [Merge](algorithms/sort/merge) [(INFO)](algorithms/sort/merge/merge.md) [(SOURCE)](algorithms/sort/merge/merge.h) [(EXAMPLE)](algorithms/sort/merge/test.cpp)
 - [Data Structures](data_structures/)
     - [Lists](data_structures/lists)
         - [LinkedList](data_structures/lists/LinkedList) [(INFO)](data_structures/lists/LinkedList/linked_list.md) [(SOURCE)](data_structures/lists/LinkedList/linkedlist.h) [(EXAMPLE)](data_structures/lists/LinkedList/test.cpp)
