@@ -15,4 +15,4 @@ Generic implementations of common data structures and algorithms in c++.
     - [Maps](data_structures/maps)
         - [HashMap](data_structures/maps/hashmap) [(INFO)](data_structures/maps/hashmap/hashmap.md) [(SOURCE)](data_structures/maps/hashmap/hashmap.h) [(EXAMPLE)](data_structures/maps/hashmap/test.cpp)
     - [Trees](data_structures/trees)
-        - [Binary Search Tree](data_structures/trees/BinarySearchTree) [(INFO)](data_structures/trees/BinarySearchTree/BinarySearchTree.md) (SOURCE) (EXAMPLE)
+        - [Binary Search Tree](data_structures/trees/BinarySearchTree) [(INFO)](data_structures/trees/BinarySearchTree/BinarySearchTree.md) [(SOURCE)](data_structures/trees/BinarySearchTree/binarysearchtree.h) [(EXAMPLE)](data_structures/trees/BinarySearchTree/test.cpp)
