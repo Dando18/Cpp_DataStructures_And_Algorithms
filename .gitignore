@@ -1,6 +1,7 @@
 .vscode
 compile.bat
 makefile
+.swp
 
 # Prerequisites
 *.d
